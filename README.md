@@ -44,34 +44,35 @@ https://codesandbox.io/s/event-loop-order-2cxkd5?file..
 
 ```javascript
 
+// 0)
 function test() {
-let a = 1;
+    let a = 1;
 
-setTimeout(() => {
-a += 3;
-console.log("a: ", a);
-}, 0);
+    setTimeout(() => {
+        a += 3;
+        console.log("a: ", a);
+      }, 0);
 
-let promise = new Promise((res, rej) => {
-a += 2;
-console.log("b: ", a);
-res(a);
-});
+    let promise = new Promise((res, rej) => {
+        a += 2;
+        console.log("b: ", a);
+        res(a);
+    });
 
-promise
-.then((x) => {
-console.log("c: ", x);
-a += 1;
-})
-.catch(() => {
-console.log("d: ", a);
-a += 4;
-})
-.then(() => {
-console.log("e: ", a);
-});
+    promise
+    .then((x) => {
+        console.log("c: ", x);
+        a += 1;
+    })
+    .catch(() => {
+        console.log("d: ", a);
+        a += 4;
+    })
+        .then(() => {
+        console.log("e: ", a);
+    });
 
-console.log("f: ", a);
+    console.log("f: ", a);
 }
 
 test();
@@ -90,17 +91,17 @@ test();
 
 _________________________________________________________________
 
-1) реализовать функцию map(аналог метода Array.map)
+// 1) реализовать функцию map(аналог метода Array.map)
 
 const map = (arr, callback) => {
-// ...
+    // ...
 }
 const arr = [1,2,3,4,5]
 console.log(map(arr, x => x * 10)) // [10,20,30,40,50]
 
 _________________________________________________________________
 
-2)
+// 2)
 const makeCounter = () => {
 // ...
 };
@@ -115,9 +116,9 @@ console.log(counter2()); // 2
 
 _________________________________________________________________
 
-3)
+// 3)
 const pipe = (...functions) => {
-// ...
+    // ...
 }
 
 console.log(pipe(
@@ -129,15 +130,15 @@ number => number ** 2,
 
 _________________________________________________________________
 
-4)
+// 4)
 const isAnagram = (str1, str2) => {
-// ...
+    // ...
 }
 
 isAnagram('Rosbank', 'Krabson'); // true
 isAnagram('Rosbank', 'Société Générale'); // false 
 
-// _________________________________________________________________
+_________________________________________________________________
 
 // 5)
 const max = (arr) => {
