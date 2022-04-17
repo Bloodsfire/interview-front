@@ -136,4 +136,34 @@ const isAnagram = (str1, str2) => {
 
 isAnagram('Rosbank', 'Krabson'); // true
 isAnagram('Rosbank', 'Société Générale'); // false 
+
+// _________________________________________________________________
+
+// 5)
+const max = (arr) => {
+    // ...
+}
+
+const arr1 = [50, 1, 2, 3, 5, 30];
+const arr2 = [-7, -13, -2, -43, -4];
+const arr3 = [-1, 23, 0, -18, -37, 11];
+
+console.log(max(arr1)) // 50
+console.log(max(arr2)) // -2
+console.log(max(arr3)) // 23
+
+// arr.reduce((acc, cur) => cur > acc ? cur : acc, arr[0])
+
+// let max = arr[0];
+
+// arr.forEach(x => {
+//     max = x > max ? x : max
+// })
+
+//
+// for(i = 0; i < arr.length; i++) {
+//   if(arr[i] > max) {
+//     max = arr[i];
+//   }
+// }
 ```
